@@ -22,39 +22,102 @@
 //var_dump($bool);
 
 //les 2
-$a = 7;
-$b = 3;
+//$a = 7;
+//$b = 3;
+//
+//echo $a % $b . "<br>";
+//
+//$number = 70;
+//
+//echo $number % 2 . "<br>";
+//
+//$a++;
+//
+//echo $a . "<br>";
+//
+//$a--;
+//
+//echo $a . "<br>";
+//
+//$a += 7;
+//
+//echo $a . "<br>";
+//
+//$text = "Hello ";
+//$text .= "World <br>";
+////$text = $text . "World";
+//echo $text;
+//
+////var_dump($a !== $b);
+//
+//$x = 1;
+//$y = 2;
+//$z = 1;
+//
+//var_dump(!($x > $y || $x === $z));
 
-echo $a % $b . "<br>";
+//les 3
 
-$number = 70;
+$code = 1;
 
-echo $number % 2 . "<br>";
+//if ($code === 1){
+//    echo "code is 1";
+//} elseif ($code === 2){
+//    echo "code is 2";
+//}elseif ($code === 3){
+//    echo "code is 3";
+//}elseif ($code === 4){
+//    echo "code is 4";
+//}elseif ($code === 5){
+//    echo "code is 5";
+//}else {
+//echo "code niet gevonden";
+//}
 
-$a++;
+switch ($code){
+    case 1:
+        echo "code is 1";
+        break;
+    case 2:
+        echo "code is 2";
+        break;
+    case 3:
+        echo "code is 3";
+        break;
+    case 4:
+        echo "code is 4";
+        break;
+    case 5:
+        echo "code is 5";
+        break;
+    default:
+        echo "code niet gevonden";
+        break;
+}
 
-echo $a . "<br>";
+$isCorrect = false;
 
-$a--;
+//if ($isCorrect){
+//    echo "correct";
+//} else{
+//    echo "niet correct";
+//}
 
-echo $a . "<br>";
+echo $isCorrect ? "correct" : "niet correct";
+echo "<br>";
+$date = date('d-m-Y H:i:s');
+var_dump($date);
 
-$a += 7;
 
-echo $a . "<br>";
+$isAuth = true;
+$age = 17;
+$isAdmin = true;
 
-$text = "Hello ";
-$text .= "World <br>";
-//$text = $text . "World";
-echo $text;
+if ($isAuth && $age >=18 || $isAdmin){
+    echo "true";
+}
 
-//var_dump($a !== $b);
 
-$x = 1;
-$y = 2;
-$z = 1;
-
-var_dump(!($x > $y || $x === $z));
 
 ?>
 </body>
