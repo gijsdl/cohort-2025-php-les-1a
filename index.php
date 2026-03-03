@@ -1,3 +1,14 @@
+<?php
+//Les project connecting DB
+    include "db.php";
+    global $db;
+    $query = $db->prepare("SELECT * FROM posts");
+    $query->execute();
+    $posts = $query->fetchAll(PDO::FETCH_ASSOC);
+    echo "<pre>";
+    var_dump($posts);
+    echo "</pre>";
+?>
 <!doctype html>
 <html lang="en">
 <head>
