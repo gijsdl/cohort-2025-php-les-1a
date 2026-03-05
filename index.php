@@ -1,13 +1,13 @@
 <?php
 //Les project connecting DB
-    include "db.php";
-    global $db;
-    $query = $db->prepare("SELECT * FROM posts");
-    $query->execute();
-    $posts = $query->fetchAll(PDO::FETCH_ASSOC);
-    echo "<pre>";
-    var_dump($posts);
-    echo "</pre>";
+//    include "db.php";
+//    global $db;
+//    $query = $db->prepare("SELECT * FROM posts");
+//    $query->execute();
+//    $posts = $query->fetchAll(PDO::FETCH_ASSOC);
+//    echo "<pre>";
+//    var_dump($posts);
+//    echo "</pre>";
 ?>
 <!doctype html>
 <html lang="en">
@@ -69,7 +69,7 @@
 
 //les 3
 
-$code = 1;
+//$code = 1;
 
 //if ($code === 1){
 //    echo "code is 1";
@@ -85,28 +85,28 @@ $code = 1;
 //echo "code niet gevonden";
 //}
 
-switch ($code){
-    case 1:
-        echo "code is 1";
-        break;
-    case 2:
-        echo "code is 2";
-        break;
-    case 3:
-        echo "code is 3";
-        break;
-    case 4:
-        echo "code is 4";
-        break;
-    case 5:
-        echo "code is 5";
-        break;
-    default:
-        echo "code niet gevonden";
-        break;
-}
-
-$isCorrect = false;
+//switch ($code){
+//    case 1:
+//        echo "code is 1";
+//        break;
+//    case 2:
+//        echo "code is 2";
+//        break;
+//    case 3:
+//        echo "code is 3";
+//        break;
+//    case 4:
+//        echo "code is 4";
+//        break;
+//    case 5:
+//        echo "code is 5";
+//        break;
+//    default:
+//        echo "code niet gevonden";
+//        break;
+//}
+//
+//$isCorrect = false;
 
 //if ($isCorrect){
 //    echo "correct";
@@ -114,20 +114,44 @@ $isCorrect = false;
 //    echo "niet correct";
 //}
 
-echo $isCorrect ? "correct" : "niet correct";
-echo "<br>";
-$date = date('d-m-Y H:i:s');
-var_dump($date);
+//echo $isCorrect ? "correct" : "niet correct";
+//echo "<br>";
+//$date = date('d-m-Y H:i:s');
+//var_dump($date);
+//
+//
+//$isAuth = true;
+//$age = 17;
+//$isAdmin = true;
+//
+//if ($isAuth && $age >=18 || $isAdmin){
+//    echo "true";
+//}
+
+//les 5: loops
+
+$totalYears = 5;
 
 
-$isAuth = true;
-$age = 17;
-$isAdmin = true;
+echo "<select name='year' id='year'>";
 
-if ($isAuth && $age >=18 || $isAdmin){
-    echo "true";
+for ($date = date('Y'); $date < date('Y') + $totalYears; $date++) {
+    if ($date === 2027){
+        continue;
+    }
+    echo "<option value='$date'>$date</option>";
 }
+echo "</select>";
 
+$number = 25;
+$rand = rand(1, 100);
+$attempts = 1;
+
+while ($number !== $rand){
+    $rand = rand(1, 100);
+    $attempts++;
+}
+echo $attempts;
 
 
 ?>
