@@ -1,13 +1,13 @@
 <?php
 //Les project connecting DB
-//    include "db.php";
-//    global $db;
-//    $query = $db->prepare("SELECT * FROM posts");
-//    $query->execute();
-//    $posts = $query->fetchAll(PDO::FETCH_ASSOC);
-//    echo "<pre>";
-//    var_dump($posts);
-//    echo "</pre>";
+    include "db.php";
+    global $db;
+    $query = $db->prepare("SELECT * FROM posts");
+    $query->execute();
+    $posts = $query->fetchAll(PDO::FETCH_ASSOC);
+    echo "<pre>";
+    var_dump($posts);
+    echo "</pre>";
 ?>
 <!doctype html>
 <html lang="en">
@@ -130,30 +130,58 @@
 
 //les 5: loops
 
-$totalYears = 5;
+//$totalYears = 5;
+//
+//
+//echo "<select name='year' id='year'>";
+//
+//for ($date = date('Y'); $date < date('Y') + $totalYears; $date++) {
+//    if ($date === 2027){
+//        continue;
+//    }
+//    echo "<option value='$date'>$date</option>";
+//}
+//echo "</select>";
+//
+//$number = 25;
+//$rand = rand(1, 100);
+//$attempts = 1;
+//
+//while ($number !== $rand){
+//    $rand = rand(1, 100);
+//    $attempts++;
+//}
+//echo $attempts;
 
-
-echo "<select name='year' id='year'>";
-
-for ($date = date('Y'); $date < date('Y') + $totalYears; $date++) {
-    if ($date === 2027){
-        continue;
-    }
-    echo "<option value='$date'>$date</option>";
-}
-echo "</select>";
-
-$number = 25;
-$rand = rand(1, 100);
-$attempts = 1;
-
-while ($number !== $rand){
-    $rand = rand(1, 100);
-    $attempts++;
-}
-echo $attempts;
-
-
+// les 6: arrays
+//$shopping = ['melk', 'brood', 'kaneelbroodje', 'ei', 'speculaas', 'appelmoes', 'kattenvoer', '24 rollen wc papier'];
+//$shopping[] = "tandenborstel";
+//
+//echo "<ul>";
+//for ($i = 0; $i < count($shopping); $i++) {
+//    echo "<li>$shopping[$i]</li>";
+//}
+//echo "</ul>";
+//
+//
+//$users = [
+//        [
+//                "firstname" => "jorik",
+//                "lastname" => "van spek",
+//                "age" => 85,
+//                "alive" => true
+//        ],
+//        [
+//                "firstname" => "Peters",
+//                "lastname" => "Hendriksen",
+//                "age" => 21,
+//                "alive" => false
+//        ]
+//];
+//
+//for ($i = 0; $i < count($users); $i++) {
+//    echo "Je bent " . $users[$i]['firstname'] . " " . $users[$i]['lastname'] . ". Je bent " . $users[$i]['age'] . " jaar oud en je bent " . ($users[$i]['alive'] ? "levend" : "dood") . "<br>";
+//}
 ?>
 </body>
 </html>
