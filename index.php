@@ -1,13 +1,13 @@
 <?php
 //Les project connecting DB
-include "db.php";
-global $db;
-$query = $db->prepare("SELECT * FROM posts");
-$query->execute();
-$posts = $query->fetchAll(PDO::FETCH_ASSOC);
-echo "<pre>";
-var_dump($posts);
-echo "</pre>";
+//include "db.php";
+//global $db;
+//$query = $db->prepare("SELECT * FROM posts");
+//$query->execute();
+//$posts = $query->fetchAll(PDO::FETCH_ASSOC);
+//echo "<pre>";
+//var_dump($posts);
+//echo "</pre>";
 ?>
 <!doctype html>
 <html lang="en">
@@ -186,23 +186,42 @@ echo "</pre>";
 //}
 
 ?>
-<div class="container-fluid">
+<!--<div class="container-fluid">-->
 <?php
 //project les 2
-for ($i = 0; $i < count($posts); $i++) {
-    echo '
-<div class="row">
-    <div class="col-7">
-        <h2>' . $posts[$i]["user_id"] . '</h2>
-        <p>' . $posts[$i]["content"] .'</p>
-        <p>' . $posts[$i]["created_at"] . '</p>
-    </div>
-</div>
-';
-}
+//for ($i = 0; $i < count($posts); $i++) {
+//    echo '
+//<div class="row">
+//    <div class="col-7">
+//        <h2>' . $posts[$i]["user_id"] . '</h2>
+//        <p>' . $posts[$i]["content"] .'</p>
+//        <p>' . $posts[$i]["created_at"] . '</p>
+//    </div>
+//</div>
+//';
+//}
 
 ?>
-</div>
+<!--</div>-->
+
+<?php
+//les 7
+
+$books = ["Harry Potter", "Dolfje weerwolfje", "Geronimo Stilton", "Leven van een loser", "Lord of the rings"];
+
+rsort($books);
+
+for ($i = 0; $i< count($books); $i++){
+    $book = $books[$i];
+    echo $book . "<br>";
+}
+
+foreach ($books as $book){
+    echo $book . "<br>";
+}
+
+
+?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
