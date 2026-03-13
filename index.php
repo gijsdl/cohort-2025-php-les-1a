@@ -206,20 +206,46 @@
 
 <?php
 //les 7
+//
+//$books = ["Harry Potter", "Dolfje weerwolfje", "Geronimo Stilton", "Leven van een loser", "Lord of the rings"];
+//
+//rsort($books);
+//
+//for ($i = 0; $i< count($books); $i++){
+//    $book = $books[$i];
+//    echo $book . "<br>";
+//}
+//
+//foreach ($books as $book){
+//    echo $book . "<br>";
+//}
 
-$books = ["Harry Potter", "Dolfje weerwolfje", "Geronimo Stilton", "Leven van een loser", "Lord of the rings"];
 
-rsort($books);
+//les 8
 
-for ($i = 0; $i< count($books); $i++){
-    $book = $books[$i];
-    echo $book . "<br>";
+//function addNumbers()
+//{
+//    $a = 10;
+//    $b = 2;
+//    echo $a + $b;
+//}
+
+//$a = 10;
+//$b = 2;
+//
+//function addNumbers()
+//{
+//    global $a, $b;
+//    echo $a + $b;
+//}
+
+
+function addNumbers($a, $b = 10){
+    return $a + $b;
 }
-
-foreach ($books as $book){
-    echo $book . "<br>";
-}
-
+$sum = addNumbers(12, 2);
+echo addNumbers(14, $sum) . "<br>";
+echo addNumbers(16) . "<br>";
 
 ?>
 
