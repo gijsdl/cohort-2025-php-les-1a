@@ -1,13 +1,13 @@
 <?php
 //Les project connecting DB
-//include "db.php";
-//global $db;
-//$query = $db->prepare("SELECT * FROM posts");
-//$query->execute();
-//$posts = $query->fetchAll(PDO::FETCH_ASSOC);
-//echo "<pre>";
-//var_dump($posts);
-//echo "</pre>";
+include "db.php";
+global $db;
+$query = $db->prepare("SELECT * FROM posts");
+$query->execute();
+$posts = $query->fetchAll(PDO::FETCH_ASSOC);
+echo "<pre>";
+var_dump($posts);
+echo "</pre>";
 ?>
 <!doctype html>
 <html lang="en">
@@ -194,14 +194,25 @@
 //<div class="row">
 //    <div class="col-7">
 //        <h2>' . $posts[$i]["user_id"] . '</h2>
-//        <p>' . $posts[$i]["content"] .'</p>
+//        <p>' . $posts[$i]["content"] . '</p>
 //        <p>' . $posts[$i]["created_at"] . '</p>
 //    </div>
 //</div>
 //';
 //}
 
+
 ?>
+<!--project les 3 -->
+<?php foreach ($posts as $post): ?>
+    <div class="row">
+        <div class="col-7">
+            <h2><?= $post["user_id"] ?></h2>
+            <p><?= $post["content"] ?></p>
+            <p><?= $post["created_at"] ?></p>
+        </div>
+    </div>
+<?php endforeach; ?>
 <!--</div>-->
 
 <?php
@@ -240,14 +251,14 @@
 //}
 
 
-function addNumbers($a, $b = 10){
-    return $a + $b;
-}
-$sum = addNumbers(12, 2);
-echo addNumbers(14, $sum) . "<br>";
-echo addNumbers(16) . "<br>";
-
-?>
+//function addNumbers($a, $b = 10){
+//    return $a + $b;
+//}
+//$sum = addNumbers(12, 2);
+//echo addNumbers(14, $sum) . "<br>";
+//echo addNumbers(16) . "<br>";
+//
+//?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
