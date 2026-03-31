@@ -1,10 +1,10 @@
 <?php
 //Les project connecting DB
-//include "db.php";
-//global $db;
-//$query = $db->prepare("SELECT * FROM posts");
-//$query->execute();
-//$posts = $query->fetchAll(PDO::FETCH_ASSOC);
+include "db.php";
+global $db;
+$query = $db->prepare("SELECT * FROM posts");
+$query->execute();
+$posts = $query->fetchAll(PDO::FETCH_ASSOC);
 //echo "<pre>";
 //var_dump($posts);
 //echo "</pre>";
@@ -204,15 +204,15 @@
 
 ?>
 <!--project les 3 -->
-<?php //foreach ($posts as $post): ?>
-<!--    <div class="row bg-danger">-->
-<!--        <div class="col-7">-->
-<!--            <h2>--><?php //= $post["user_id"] ?><!--</h2>-->
-<!--            <p>--><?php //= $post["content"] ?><!--</p>-->
-<!--            <p>--><?php //= $post["created_at"] ?><!--</p>-->
-<!--        </div>-->
-<!--    </div>-->
-<?php //endforeach; ?>
+<?php foreach ($posts as $post): ?>
+    <div class="row">
+        <div class="col-7">
+            <h2><?= $post["user_id"] ?></h2>
+            <p><?= $post["content"] ?></p>
+            <p><?= $post["created_at"] ?></p>
+        </div>
+    </div>
+<?php endforeach; ?>
 <!--</div>-->
 
 <?php
@@ -260,19 +260,19 @@
 //
 //
 //les 10 & 11
-if (isset($_POST['submit'])) {
-    echo $_POST['username'];
-}
+//if (isset($_POST['submit'])) {
+//    echo $_POST['username'];
+//}
 
 ?>
 
-<form method="post">
-    <label for="username">Gebruikersnaam</label>
-    <input type="text" id="username" name="username"><br>
-    <label for="password">Wachtwoord</label>
-    <input type="password" id="password" name="password">
-    <button type="submit" name="submit">Verzenden</button>
-</form>
+<!--<form method="post">-->
+<!--    <label for="username">Gebruikersnaam</label>-->
+<!--    <input type="text" id="username" name="username"><br>-->
+<!--    <label for="password">Wachtwoord</label>-->
+<!--    <input type="password" id="password" name="password">-->
+<!--    <button type="submit" name="submit">Verzenden</button>-->
+<!--</form>-->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
