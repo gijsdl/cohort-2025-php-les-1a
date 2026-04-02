@@ -1,4 +1,5 @@
 <?php
+session_start();
 //Les project connecting DB
 include "db.php";
 global $db;
@@ -273,6 +274,9 @@ $posts = $query->fetchAll(PDO::FETCH_ASSOC);
 <!--    <input type="password" id="password" name="password">-->
 <!--    <button type="submit" name="submit">Verzenden</button>-->
 <!--</form>-->
+
+<!-- les 13 -->
+<p><?= $_SESSION['alert'] ?></p>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"

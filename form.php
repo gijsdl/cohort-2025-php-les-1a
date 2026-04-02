@@ -1,4 +1,5 @@
 <?php
+session_start();
 //les 12
 if (isset($_POST['submit'])){
     $errors = [];
@@ -19,9 +20,18 @@ if (isset($_POST['submit'])){
     }
 
     if (empty($errors)){
+//        les 13
+        $_SESSION['alert'] = "gelukt";
         header('Location: index.php');
         exit;
     }
+}
+
+// les 13
+//setcookie('naam', 'mijn naam', time() + 5);
+
+if (isset($_COOKIE['naam'])){
+    echo $_COOKIE['naam'];
 }
 
 ?>
