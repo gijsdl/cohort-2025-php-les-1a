@@ -9,6 +9,7 @@ $posts = $query->fetchAll(PDO::FETCH_ASSOC);
 //echo "<pre>";
 //var_dump($posts);
 //echo "</pre>";
+//var_dump($_SESSION['user']);
 ?>
 <!doctype html>
 <html lang="en">
@@ -23,6 +24,12 @@ $posts = $query->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 <?php
+if (isset($_SESSION['user'])){
+    echo 'Je bent ingelogd ';
+    echo $_SESSION['user']['name'];
+}else{
+    echo "je bent niet ingelogd";
+}
 //les 1
 //$firstVarible = "mijn eerste variabele";
 //$number = 122 + 12;
